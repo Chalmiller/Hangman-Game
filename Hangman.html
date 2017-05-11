@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>!!!Hangman!!!</title>
+  </head>
+  <body>
+    <h1> The Psychic Game </h1>
+    
+    <p>Press any key to get started</p>
+    <p>wins:
+      <span id="wins">0</span>
+    </p>
+    <p>Current Song: 
+      <span id="current_word"> </span>
+    </p>
+    <p>Tries: 
+      <span id="number_of_guesses">15</span>
+    </p>
+    <p>Letters Used: 
+      <span id="letters_used"></span>
+    </p>
+
+    <script>
+      var radiohead_list = ["idioteque", "pyramidsong", "decksdark", "presenttense"];
+      var guesses = 15;
+      var playerChoice = "";
+      var letter_used_already = [];
+      var compChoice = radiohead_list[Math.floor(Math.random() * radiohead_list.length)];
+      var displayed_song = compChoice.split('');
+
+      console.log(compChoice);
+      console.log(displayed_song);
+
+      document.getElementById("current_word").innerHTML = displayed_song;
+      document.getElementById("current_word").style.visibility = "hidden";
+
+      document.onkeyup = function(event) {
+        var playerChoice = event.key;
+        guesses -= 1;
+
+        if (guesses <= 0){
+          console.log("Game Over");
+        }
+
+        document.getElementById("letters_used").innerHTML = letter_used_already;
+        document.getElementById("number_of_guesses").innerHTML = guesses;
+        
+        for (i = 0; i < displayed_song.length; i++) {
+          if (playerChoice == displayed_song[i]) {
+            letter_used_already.push(playerChoice);
+            if (letter_used_already.includes(playerChoice)) {
+              break;
+              }
+            document.getElementById("current_word").style.visibility = "visible";
+            }
+          }
+        }
+
+            
+    </script>    
+  </body>
+</html>
+
+
+

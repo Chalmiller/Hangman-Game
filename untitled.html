@@ -1,0 +1,40 @@
+!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>!!!Hangman!!!</title>
+  </head>
+  <body>
+    <p>Press any key to get started</p>
+    <p>wins:
+      <span id="wins">0</span>
+    </p>
+    <p>Current Song: 
+      <span id="current_word"> </span>
+    </p>
+    <p>Tries: 
+      <span id="number_of_guesses">15</span>
+    </p>
+    <p>Letters Used: 
+      <span id="letters_used"></span>
+    </p>
+    <div id="empty-div"></div>
+
+    <script>
+      
+      var emptyDiv = document.getElementById('empty-div');
+      console.log(emptyDiv);
+
+      var div = document.createElement('div');
+      div.innerHTML = 'Fancy Shoes';
+      div.className = 'Fancy';
+
+      emptyDiv.appendChild(div);
+      console.log(div)
+            
+    </script>    
+  </body>
+</html>
+
+
+
