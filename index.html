@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>!!!Hangman!!!</title>
-  </head>
-  <body>
+<head>
+<meta charset="UTF-8">
+<title>!!!Psychic!!!</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel = "stylesheet" type = "text/css" href = "style.css" />
+</head>
+<body>
+
+
     <h1> The Psychic Game </h1>
 
     <p>Press any key to get started</p>
@@ -46,7 +52,7 @@
           if (playerChoice == compChoice) {
               wins = wins + 1;
               document.getElementById("current_word").style.visibility = "visible";
-              guesses = 15;
+              guesses = 16;
               compChoice = potenitalLetters[Math.floor(Math.random() * potenitalLetters.length)];
               console.log(compChoice);
               letter_used_already = [];
@@ -56,7 +62,7 @@
           }
           if (playerChoice != compChoice && guesses == 0) {
             losses = losses + 1;
-            guesses = 15;
+            guesses = 16;
             compChoice = potenitalLetters[Math.floor(Math.random() * potenitalLetters.length)];
             console.log(compChoice); 
             letter_used_already = [];           
@@ -73,8 +79,5 @@
         
             
     </script>    
-  </body>
+</body>
 </html>
-
-
-
